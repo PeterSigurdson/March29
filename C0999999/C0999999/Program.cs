@@ -18,10 +18,12 @@ namespace C0999999
     
     static void Download()
     {
-
-            Thread.Sleep(3000);
-            Console.WriteLine("Download complete...");
-            Thread.Sleep(7000);
+            Task.Run(() =>
+           {
+               Thread.Sleep(3000);
+               Console.WriteLine("Download Complete..");
+           });
+         
         }
 
         
