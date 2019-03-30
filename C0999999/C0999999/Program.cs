@@ -11,13 +11,15 @@ namespace C0999999
     {
         static void Main(string[] args)
         {
-		
+            Console.WriteLine("downloading a file");
+            Download();
+            Console.ReadLine();
         }
-    }
-
+    
     static void Download()
     {
-        Thread.Sleep(3000);
+            Thread.Sleep(3000);
+            Console.WriteLine("Download complete...");
+        }
     }
-    
 }
