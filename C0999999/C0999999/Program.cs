@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Net.Http;
 
 namespace C0999999
 {
@@ -23,11 +25,15 @@ namespace C0999999
 
     class Network
     {
-        static public Task Download()
-        {
-            return Task.Run(
-                    () => Thread.Sleep(3000));
+        ArrayList WebPageContents = new ArrayList();
+        public static async Task Download() {
+            HttpClient client = new HttpClient();
+            String data = await client.GetStringAsync("http://torontopubliclibrary.ca");
+            // Console.WriteLine(data);
+            foreach (String line in data)
+            {
+                
+            }
         }
     }
-
 }
